@@ -20,6 +20,6 @@ public class ResponseFilter implements Filter {
 
         HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
         httpServletResponse.setHeader("APP-REQUEST-STATUS", "Success");
-        filterChain.doFilter(servletRequest, servletResponse);gi
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 }
