@@ -1,4 +1,4 @@
-# Spring Request and Repsonse examples
+# Spring Request and Response examples
 
 In the following Spring boot REST application, we inject a request scope bean into a singleton via a proxy class.
 
