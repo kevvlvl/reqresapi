@@ -1,5 +1,6 @@
 package com.kevvlvl.rest.reqresapi.bean;
 
+import com.kevvlvl.rest.reqresapi.Constants;
 import com.kevvlvl.rest.reqresapi.dto.HeaderDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -16,17 +17,16 @@ import javax.servlet.http.HttpServletRequest;
 @Slf4j
 public class RequestInit {
 
-    public static final String HEADER_CLIENT_ID = "APP-CLIENTID";
 
     @Bean("headerDto")
     @Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
     public HeaderDto getHeaderDto() {
 
-        log.info("getHeaderDto - init HeaderDTO and parse header");
+        log.info("getHeaderDto() - init HeaderDTO and parse header");
         HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
 
         HeaderDto dto = new HeaderDto();
-        dto.setClientId(request.getHeader(HEADER_CLIENT_ID));
+        dto.setClientId(request.getHeader(Constants.HEADER_CLIENT_ID));
 
         return dto;
     }

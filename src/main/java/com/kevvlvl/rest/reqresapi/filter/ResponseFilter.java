@@ -16,9 +16,9 @@ public class ResponseFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
 
-        log.info("doFilter - update Response header for all requests");
+        log.info("doFilter() - update Response header for all requests - pre-processing");
 
-        httpServletResponse.setHeader("APP-REQUEST-STATUS", "Success");
+        httpServletResponse.setHeader("X-RECEIVE-STATUS", "true");
         filterChain.doFilter(httpServletRequest, httpServletResponse);
     }
 }

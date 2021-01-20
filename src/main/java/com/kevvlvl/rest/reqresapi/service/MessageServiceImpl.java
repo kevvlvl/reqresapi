@@ -19,10 +19,8 @@ public class MessageServiceImpl implements MessageService {
     @Override
     public String buildMessage() {
 
-        log.info("buildMessage");
-
         String message = String.format("Hello clientId %s", this.headerDto.getClientId());
-        log.info("message formed: {}", message);
+        log.info("buildMessage() - message formed: {}", message);
 
         return message;
     }
